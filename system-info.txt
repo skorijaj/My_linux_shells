@@ -1,0 +1,47 @@
+
+#!/bin/bash
+
+echo "------------------------------- System Information -------------------------------"
+echo "Hostname: $(hostname)"
+echo "Uptime: $(uptime -p)"
+echo "Manufacturer: $(cat /sys/class/dmi/id/chassis_vendor)"
+echo "Product Name: $(cat /sys/class/dmi/id/product_name)"
+echo "Version: $(cat /sys/class/dmi/id/product_version)"
+echo "Serial Number: $(cat /sys/class/dmi/id/product_serial)"
+echo "Kernel Version: $(uname -r)"
+echo "Architecture: $(uname -m)""___________________________
+echo "CPU Info: $(lscpu | grep 'Model name' | sed 's/Model name: *//')"
+echo "Total Memory: $(free -h | grep Mem | awk '{print $2}')"
+echo "Available Memory: $(free -h | grep Mem | awk '{print $7}')"
+echo "Disk Usage: $(df -h / | grep / | awk '{print $5}')"
+echo "IP Address: $(hostname -I | awk '{print $1}')"
+echo "MAC Address: $(ip link show | grep link/ether | awk '{print $2}')"
+echo "These are the Ports": $(ss -s)" 
+
+
+echo "Script will proceed in 5 seconds..."
+
+sleep 5s
+
+echo "Thanks for waiting."
+
+
+echo "Here are all of the applications"
+
+
+echo "Applicatons: $(rpm -qa)"
+
+
+echo "..."
+now calm down
+
+sleep 5s
+
+
+
+echo "Dont worry ..."
+
+sleep 5s
+
+echo "Thanks for waiting."
+------------------------------- End of Information -----------------------------
